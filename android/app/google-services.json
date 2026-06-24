@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "544468135795",
+    "project_id": "vehicheck-guide",
+    "storage_bucket": "vehicheck-guide.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544468135795:android:a9c4a19902e2af75931f06",
+        "android_client_info": {
+          "package_name": "com.example.vehicheckguide"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHtA12xOtB7oIC1FKzZs84dvRtfiIKb-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
