@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'add_vehicle_screen.dart';
+import 'add_checklist_screen.dart';
 
 class AdminScreen extends StatelessWidget {
   const AdminScreen({super.key});
@@ -11,7 +12,7 @@ class AdminScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Admin Dashboard"),
-        backgroundColor: Colors.red,
+        backgroundColor: const Color.fromARGB(255, 14, 23, 197),
       ),
 
       body: Padding(
@@ -36,6 +37,28 @@ class AdminScreen extends StatelessWidget {
                 },
                 child: Text(
                   "Add Vehicle",
+                  style: TextStyle(fontSize: 18, color: Colors.white),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 10),
+
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => AddInspectionScreen()),
+                  );
+                },
+                child: Text(
+                  "Add Inspection Checklist",
                   style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ),

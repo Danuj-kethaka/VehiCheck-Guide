@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vehicheckguide/screens/inspection/inspection_screen.dart';
 
 class InspectionIntroScreen extends StatelessWidget {
-  const InspectionIntroScreen({super.key});
+  final String vehicleId;
+  const InspectionIntroScreen({super.key, required this.vehicleId});
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +80,14 @@ class InspectionIntroScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => InspectionScreen(vehicleId: vehicleId),
+                    ),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,

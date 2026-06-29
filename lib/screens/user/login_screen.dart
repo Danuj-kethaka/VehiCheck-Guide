@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'home_screen.dart';
 import 'register_screen.dart';
-import 'admin_screen.dart';
+import '../admin/admin_screen.dart';
 
 import '../services/auth_service.dart';
 

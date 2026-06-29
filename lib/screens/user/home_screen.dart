@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'profile_screen.dart';
-import 'inspection_intro_screen.dart';
+import '../inspection/inspection_intro_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -251,7 +251,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (_) => const InspectionIntroScreen(),
+                                  builder: (_) => InspectionIntroScreen(
+                                    vehicleId: selectedVehicleId!,
+                                  ),
                                 ),
                               );
                             },
