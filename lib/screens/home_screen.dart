@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'profile_screen.dart';
+import 'inspection_intro_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       IconButton(
                         icon: const CircleAvatar(
-                          backgroundColor: Colors.blue,
+                          backgroundColor: Color.fromARGB(255, 243, 191, 33),
                           child: Icon(Icons.person, color: Colors.white),
                         ),
                         onPressed: () {
@@ -84,10 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   const SizedBox(height: 5),
 
-                  const Text(
-                    "Smart Vehicle Inspection Dashboard",
-                    style: TextStyle(color: Colors.grey),
-                  ),
+                  const Text("Dashboard", style: TextStyle(color: Colors.grey)),
 
                   const SizedBox(height: 60),
 
@@ -163,11 +161,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: const BorderRadius.vertical(
                             top: Radius.circular(20),
                           ),
-                          child: Image.network(
-                            selectedVehicle["image"],
+                          child: SizedBox(
                             height: 180,
                             width: double.infinity,
-                            fit: BoxFit.cover,
+                            child: ClipRRect(
+                              borderRadius: const BorderRadius.vertical(
+                                top: Radius.circular(20),
+                              ),
+                              child: Image.network(
+                                selectedVehicle["image"],
+                                width: double.infinity,
+                                height: 180,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
 
@@ -204,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.all(18),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Colors.blue, Colors.blue],
+                        colors: [Color.fromARGB(255, 13, 211, 46), Colors.blue],
                       ),
                       borderRadius: BorderRadius.circular(18),
                     ),
@@ -241,11 +248,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             onPressed: () {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    "Selected: ${selectedVehicle["model"]}",
-                                  ),
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const InspectionIntroScreen(),
                                 ),
                               );
                             },
